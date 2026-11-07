@@ -1,0 +1,15 @@
+"""Entry point: run rea-py straight from a checkout, no installation needed.
+
+    python app.py list-tools
+    python app.py inspect-pe C:\\path\\to\\app.exe
+    python app.py serve            # start the MCP server
+"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
+
+from rea_py.cli import main  # noqa: E402
+
+if __name__ == "__main__":
+    raise SystemExit(main())
