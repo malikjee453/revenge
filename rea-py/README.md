@@ -30,12 +30,21 @@ ADB device analysis, firmware extraction, packet/pcap/logic-signal analysis, pro
 RL-environment export, EVM/WASM/BEAM/IL2CPP/Godot/PyInstaller analyzers, PE certificate parsing,
 and the agent setup installer. See the upstream project for those.
 
-## Run without installing
+## Web UI (Streamlit)
 
 ```bash
-python app.py list-tools
-python app.py inspect-elf /usr/bin/ls --compact
-python app.py serve
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+On Streamlit Community Cloud set the main file path to `app.py`. The only dependency is `streamlit`.
+
+## Run the CLI without installing
+
+```bash
+python run_cli.py list-tools
+python run_cli.py inspect-elf /usr/bin/ls --compact
+python run_cli.py serve
 ```
 
 ## Install
@@ -62,7 +71,7 @@ Exit status is `0` on success and `2` on a user-facing error (bad path, malforme
 ## MCP server
 
 ```bash
-rea-py serve        # or: python app.py serve
+rea-py serve        # or: python run_cli.py serve
 ```
 
 Example client registration (Claude Desktop / Claude Code style JSON):
