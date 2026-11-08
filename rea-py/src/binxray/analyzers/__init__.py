@@ -1,0 +1,21 @@
+"""Importing this package registers every analyzer with the tool registry."""
+from . import (  # noqa: F401
+    apk,
+    elf,
+    elf_symbols,
+    embedded,
+    fingerprint,
+    filetype,
+    gobuild,
+    har,
+    indicators,
+    jar,
+    javascript,
+    macho,
+    models,
+    pe,
+    report,
+    sqlite_db,
+    strings_tool,
+    wasm,
+)
